@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Kind</key>
+    <string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
+    <key>Identifier</key>
+    <string>com.apple.dt.unit.spotlightImporter</string>
+    <key>Ancestors</key>
+    <array>
+        <string>com.apple.dt.unit.systemPlugInBase</string>
+    </array>
+    <key>Concrete</key>
+    <true/>
+    <key>Description</key>
+    <string>This template builds a Core Data Spotlight Importer.</string>
+    <key>AssociatedTargetSpecification</key>
+    <dict>
+        <key>PopUpTitle</key>
+        <string>Embed in Application:</string>
+        <key>PopUpDescription</key>
+        <string>The application target that will host this new importer. The application will be set up to embed the new importer.</string>
+        <key>AllowableProductTypes</key>
+        <array>
+            <string>com.apple.product-type.application</string>
+        </array>
+        <key>AllowablePlatforms</key>
+        <array>
+            <string>com.apple.platform.macosx</string>
+        </array>
+        <key>AssociatedTargetIsDependent</key>
+        <true/>
+        <key>AssociatedTargetNeedsProductBuildPhaseInjection</key>
+        <true/>
+    </dict>
+    <key>Targets</key>
+    <array>
+        <dict>
+            <key>ProductType</key>
+            <string>com.apple.product-type.spotlight-importer</string>
+            <key>TargetIdentifier</key>
+            <string>com.apple.dt.cocoaSpotlightImporterTarget</string>
+            <key>SharedSettings</key>
+            <dict>
+                <key>INSTALL_PATH</key>
+                <string>@executable_path/../Contents/Library/Spotlight</string>
+                <key>SKIP_INSTALL</key>
+                <string>YES</string>
+                <key>WRAPPER_EXTENSION</key>
+                <string>mdimporter</string>
+                <key>ALWAYS_SEARCH_USER_PATHS</key>
+                <string>YES</string>
+                <key>LIBRARY_STYLE</key>
+                <string>BUNDLE</string>
+            </dict>
+            <key>BuildPhases</key>
+            <array>
+                <dict>
+                    <key>Class</key>
+                    <string>Sources</string>
+                </dict>
+                <dict>
+                    <key>Class</key>
+                    <string>Frameworks</string>
+                </dict>
+                <dict>
+                    <key>Class</key>
+                    <string>Resources</string>
+                </dict>
+            </array>
+        </dict>
+    </array>
+    <key>Nodes</key>
+    <array>
+        <string>main.c</string>
+        <string>GetMetadataForFile.m</string>
+        <string>MySpotlightImporter.h</string>
+        <string>MySpotlightImporter.m</string>
+        <string>Info.plist:spotlight</string>
+        <string>Info.plist:NSHumanReadableCopyright</string>
+        <string>Importer Read Me.txt</string>
+    </array>
+    <key>Definitions</key>
+    <dict>
+        <key>main.c</key>
+        <dict>
+            <key>Path</key>
+            <string>main.c</string>
+            <key>Group</key>
+            <string>Supporting Files</string>
+        </dict>
+        <key>GetMetadataForFile.m</key>
+        <dict>
+            <key>Path</key>
+            <string>GetMetadataForFile.m</string>
+        </dict>
+        <key>MySpotlightImporter.h</key>
+        <dict>
+            <key>Path</key>
+            <string>MySpotlightImporter.h</string>
+        </dict>
+        <key>MySpotlightImporter.m</key>
+        <dict>
+            <key>Path</key>
+            <string>MySpotlightImporter.m</string>
+        </dict>
+        <key>Info.plist:spotlight</key>
+        <string><![CDATA[<!--
+If your application does not already define a UTI, you may want to declare it
+here, so that your documents are recognized by systems which do not have your
+application installed.
+
+To export this declaration, fill in the fields with your application&apos;s 
+information, and uncomment the block of XML.
+-->
+
+<key>UTExportedTypeDeclarations</key>
+<array>
+    <dict>
+        <key>UTTypeIdentifier</key>
+        <string>YOUR_EXTERNAL_RECORD_UTI</string>
+        <key>UTTypeReferenceURL</key>
+        <string>http://www.company.com/yourproduct</string>
+        <key>UTTypeDescription</key>
+        <string>Your Document Kind String</string>
+        <key>UTTypeConformsTo</key>
+        <array>
+            <string>public.data</string>
+            <string>public.content</string>
+        </array>
+        <key>UTTypeTagSpecification</key>
+        <dict>
+            <key>com.apple.ostype</key>
+            <string>XXXX</string>
+            <key>public.filename-extension</key>
+            <array>
+                <string>YOUR_EXTERNAL_RECORD_EXTENSION</string>
+            </array>
+        </dict>
+    </dict>
+</array>
+<key>CFBundleDocumentTypes</key>
+<array>
+    <dict>
+        <key>CFBundleTypeRole</key>
+        <string>MDImporter</string>
+        <key>LSItemContentTypes</key>
+        <array>
+            <string>YOUR_EXTERNAL_RECORD_UTI</string>
+        </array>
+    </dict>
+</array>
+<key>CFPlugInDynamicRegisterFunction</key>
+<string></string>
+<key>CFPlugInDynamicRegistration</key>
+<string>NO</string>
+<key>CFPlugInFactories</key>
+<dict>
+    <key>___UUID___</key>
+    <string>MetadataImporterPluginFactory</string>
+</dict>
+<key>CFPlugInTypes</key>
+<dict>
+    <key>8B08C4BF-415B-11D8-B3F9-0003936726FC</key>
+    <array>
+        <string>___UUID___</string>
+    </array>
+</dict>
+<key>CFPlugInUnloadFunction</key>
+<string></string>
+<key>LSMinimumSystemVersion</key>
+<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
+]]></string>
+        <key>Importer Read Me.txt</key>
+        <dict>
+            <key>Path</key>
+            <string>Importer Read Me.txt</string>
+            <key>TargetIdentifiers</key>
+            <array/>
+        </dict>
+    </dict>
+</dict>
+</plist>
